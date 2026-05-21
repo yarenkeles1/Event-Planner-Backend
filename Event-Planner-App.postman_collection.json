@@ -1,0 +1,339 @@
+{
+  "info": {
+    "_postman_id": "300bad41-8cf5-4bb6-a512-e78544ee95e9",
+    "name": "Event-Planner-App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53418140",
+    "_collection_link": "https://go.postman.co/collection/53418140-300bad41-8cf5-4bb6-a512-e78544ee95e9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"fullName\": \"Yaren Keleş\",\r\n    \"email\": \"yaren@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/users/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"yaren@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/users/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Aksigorta Java Eğitimi\",\r\n  \"location\": \"Aksigorta Etki Merkezi\",\r\n  \"description\": \"Java Eğitimi Kapanışı\",\r\n  \"category\": \"Yazılım\",\r\n  \"date\": \"2026-05-22\",\r\n  \"time\": \"09:00:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/event/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/list",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event Detail",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/getOne/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "getOne",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 35,\r\n  \"title\": \"Aksigorta Java Eğitimi\",\r\n  \"location\": \"Aksigorta Etki Merkezi\",\r\n  \"description\": \"Java Eğitimi Kapanışı\",\r\n  \"category\": \"Yazılım\",\r\n  \"date\": \"2026-05-22\",\r\n  \"time\": \"09:00:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/event/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/deleteOne/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "deleteOne",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Event Search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/search",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "My Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/myEvents?page=0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "myEvents"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Publish Event",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/publish/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "publish",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pause Event",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/pause/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "pause",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Archive Event",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/event/archive/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "event",
+            "archive",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Participation Save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/participation/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "participation",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Participation List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/participation/list/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "participation",
+            "list",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
