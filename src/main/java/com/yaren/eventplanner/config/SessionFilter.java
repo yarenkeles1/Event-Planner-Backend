@@ -30,7 +30,7 @@ public class SessionFilter implements Filter {
         }
 
         String urlPath = request.getRequestURI();
-        String[] freeUrls = {"/users", "/swagger-ui", "/v3/api-docs", "/actuator", "/event/list", "/event/getOne","/event/search"};
+        String[] freeUrls = {"/users", "/swagger-ui", "/v3/api-docs", "/actuator", "/event/list", "/event/getOne","/event/search", "/h2-console"};
 
         boolean isAuth = true;
         for (String freeUrl : freeUrls) {
