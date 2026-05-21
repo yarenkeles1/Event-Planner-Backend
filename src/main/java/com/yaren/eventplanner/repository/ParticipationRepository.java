@@ -20,4 +20,6 @@ public interface ParticipationRepository extends JpaRepository<Participation, Lo
 
     Page<Participation> findByUser(Users user, Pageable pageable);
 
+    long countByUser(Users user);
+
 }

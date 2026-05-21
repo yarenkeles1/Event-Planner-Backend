@@ -64,6 +64,11 @@ public class EventRestController {
         return eventService.myEvents(page, session);
     }
 
+    @GetMapping("countJoinedEvents")
+    public long countJoinedEvents(HttpSession session) {
+        return eventService.countJoinedEvents(session);
+    }
+
     @PatchMapping("publish/{id}")
     public ResponseEntity publish(
             @PathVariable Long id,

@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -155,6 +156,12 @@ public class EventService {
             dto.setParticipationCount(participationRepository.countByEvent(event));
             return dto;
         });
+    }
+
+    public long countJoinedEvents(HttpSession session) {
+        Users user = getOwner(session);
+        if (user == null) return 0;
+        return participationRepository.countByUser(user);
     }
 
     public ResponseEntity publish(Long id, HttpSession session) {

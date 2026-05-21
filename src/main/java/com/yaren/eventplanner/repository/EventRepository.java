@@ -20,4 +20,5 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     );
 
     Page<Event> findByOwner(Users owner, Pageable pageable);
+
 }
