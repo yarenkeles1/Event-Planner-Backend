@@ -11,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("event")
 @RequiredArgsConstructor
@@ -88,6 +90,12 @@ public class EventRestController {
             @PathVariable Long id,
             HttpSession session) {
         return eventService.archive(id, session);
+    }
+
+    @PostMapping("logout")
+    public ResponseEntity<?> logout(HttpSession session) {
+        session.invalidate();
+        return ResponseEntity.ok(Map.of("success", true, "message", "Log out successfuly."));
     }
     @GetMapping("control")
     public void control() {}
